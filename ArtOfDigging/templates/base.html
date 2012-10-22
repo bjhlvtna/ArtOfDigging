@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ LANGUAGE_CODE }}" xml:lang="{{ LANGUAGE_CODE }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+<head>
+	<title>{% block title %}{% endblock %} &#187; Art of Digging</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+	<link type="text/css" rel="stylesheet" href="/media/css/base.css"/>
+	
+	{% block head %}{% endblock head %}
+</head>
+{% load i18n active %}
+
+<body class="{% block body %}{% endblock %}">
+	<div id="wrapper">
+		<div id="header">
+			<h1><a href="/">Art of Digging</a></h1>			
+			<ul id="menu">
+				<li class="{% active request "/LoadingBlog/" %}"><a href="/LoadingBlog/">LoadingBlog</a></li>
+				<li class="{% active request "/LoadingPortfolio/" %}"><a href="/LoadingPortfolio/">LoadingPortfolio</a></li>
+			</ul>
+		</div>
+		<div id="content">
+			{% block content %}{% endblock %}
+		</div>
+		<div id="footer">
+			<span class="site"><a href="/portfolio/my-portfolio-site/">Powered by Django &amp; Python</a></span>
+			<span>Copyright &copy; {% now "Y" %} &mdash; <a href="">Art of Digging</a></span>
+		</div>
+	</div>	
+</body>
+</html>

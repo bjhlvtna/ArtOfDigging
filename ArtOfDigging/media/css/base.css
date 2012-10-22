@@ -1,0 +1,759 @@
+/* line 55, base.sass */
+html {
+  overflow-y: scroll;
+  height: 100%;
+  background: #eeeeee url(/media/img/body_bg.png) repeat left top;
+}
+
+/* line 65, base.sass */
+body, html, td, textarea, input, select {
+  font-family: arial;
+  font-size: 100%;
+  color: #222222;
+  line-height: 1.125em;
+}
+
+/* line 79, base.sass */
+body {
+  padding: 0 0 10px 0;
+  margin: 0;
+  vertical-align: top;
+}
+
+/* line 91, base.sass */
+a:active, a:hover, a:link {
+  color: #095bc0;
+}
+
+/* line 97, base.sass */
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* line 111, base.sass */
+.clearfix {
+  display: inline-block;
+}
+
+/* line 117, base.sass */
+#wrapper {
+  margin: 0 auto;
+  width: 980px;
+}
+
+/* line 125, base.sass */
+#skip {
+  position: absolute;
+  left: -9999px;
+}
+
+/* line 133, base.sass */
+#header {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+  -moz-border-radius-bottom-left: 10px;
+  -moz-border-radius-bottom-right: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  float: left;
+  width: 100%;
+  background-color: white;
+  border: solid 1px #cccccc;
+}
+/* line 147, base.sass */
+#header h1 {
+  display: block;
+  margin: 0;
+  padding: 10px 10px;
+}
+/* line 155, base.sass */
+#header h1 a {
+  display: block;
+  text-indent: -9999px;
+  background: white;
+  height: 80px;
+  width: 411px;
+}
+/* line 167, base.sass */
+#header h1 a.print {
+  display: none;
+}
+/* line 171, base.sass */
+#header h1 br {
+  display: none;
+}
+/* line 175, base.sass */
+#header .stackoverflow {
+  float: right;
+  padding: 10px;
+}
+
+/* line 183, base.sass */
+#menu {
+  -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+  -moz-border-radius-bottomleft: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  float: left;
+  clear: both;
+  list-style: none;
+  margin: 0;
+  padding: 0 20px;
+  width: 940px;
+  height: 40px;
+  background: url(/media/img/blt1_menu_bg.png) repeat-x 0 0;
+  border-top: solid 2px #cccccc;
+}
+/* line 207, base.sass */
+#menu li {
+  float: left;
+  display: block;
+  line-height: 40px;
+  text-align: center;
+}
+/* line 217, base.sass 2672d1*/
+#menu li:hover {
+  background: url(/media/img/blt1_menu_hover_bg.png) repeat-x 0 0;
+  border-bottom: solid 5px #bbbbbb;
+}
+/* line 223, base.sass */
+#menu li.active {
+  background: url(/media/img/blt1_menu_active_bg.png) repeat-x 0 0;
+  border-bottom: solid 5px white;
+}
+/* line 229, base.sass */
+#menu li a {
+  display: block;
+  width: 235px;
+  height: 40px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 110%;
+  text-shadow: 0 0 5px black;
+}
+
+/* line 249, base.sass */
+#content {
+  -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  float: left;
+  width: 940px;
+  clear: both;
+  background-color: white;
+  border: solid 1px #cccccc;
+  padding: 20px;
+  margin: 10px 0;
+  font-size: 0.875em;
+}
+/* line 271, base.sass */
+#content h2 {
+  font-size: 200%;
+  margin-top: 0;
+  padding-bottom: 0.5em;
+  border-bottom: solid 3px #cccccc;
+}
+
+/* line 283, base.sass */
+#footer {
+  clear: both;
+  color: #666666;
+  padding: 0 0.25em;
+}
+/* line 291, base.sass */
+#footer .validate {
+  float: right;
+}
+/* line 295, base.sass */
+#footer .validate a {
+  padding-left: 20px;
+  background: transparent url(/media/img/accept.png) no-repeat left top;
+}
+/* line 301, base.sass */
+#footer .site {
+  float: right;
+}
+/* line 305, base.sass */
+#footer .site a {
+  padding-left: 20px;
+  margin-right: 20px;
+  background: transparent url(/media/img/brick.png) no-repeat left top;
+}
+
+/* line 315, base.sass */
+hr {
+  border: 0;
+  border-bottom: 3px double #cccccc;
+  clear: both;
+  height: 3px;
+  margin-bottom: 1em;
+}
+
+/* line 331, base.sass */
+.codehilite pre {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  padding: 0.5em;
+  margin: 1em 0;
+  background-color: #fafafa;
+  border: solid 1px #dddddd;
+  width: auto;
+  overflow: auto;
+  font-size: 85%;
+  font-family: Consolas, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New;
+}
+
+/* line 355, base.sass */
+.blog .primary {
+  float: left;
+  width: 630px;
+}
+/* line 361, base.sass */
+.blog .primary .post {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border: solid 1px #cccccc;
+  margin-bottom: 1em;
+  padding: 15px 10px 0 10px;
+}
+/* line 371, base.sass */
+.blog .primary .post h3 {
+  margin: 0 0 0.5em 0;
+  font-size: 140%;
+}
+/* line 377, base.sass */
+.blog .primary .post h3.title {
+  font-size: 200%;
+  line-height: 100%;
+}
+/* line 383, base.sass */
+.blog .primary .post img.full {
+  margin: 0 -10px;
+}
+/* line 387, base.sass */
+.blog .primary .post img.right {
+  margin: 0 0 10px 10px;
+  float: right;
+}
+/* line 393, base.sass */
+.blog .primary .post img.left {
+  margin: 0 10px 10px 0;
+  float: left;
+}
+/* line 399, base.sass */
+.blog .primary .post ul.links {
+  list-style: none;
+  -moz-border-radius-bottomleft: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  background: transparent url(/media/img/blog_links.png) repeat-x left bottom;
+  margin: 0 -10px;
+  padding: 0 10px;
+  line-height: 2em;
+  border-top: solid 1px #cccccc;
+}
+/* line 415, base.sass */
+.blog .primary .post ul.links li {
+  display: inline;
+  padding: 0 5px;
+}
+/* line 421, base.sass */
+.blog .primary .post ul.links li a.comment {
+  padding-left: 20px;
+  background: transparent url(/media/img/comment.png) no-repeat left top;
+}
+/* line 427, base.sass */
+.blog .primary .post ul.links li a.link {
+  padding-left: 20px;
+  background: transparent url(/media/img/link.png) no-repeat left top;
+}
+/* line 435, base.sass */
+.blog .primary .pagination .older {
+  padding-left: 20px;
+  background: transparent url(/media/img/back.png) no-repeat left center;
+}
+/* line 441, base.sass */
+.blog .primary .pagination .newer {
+  float: right;
+  padding-right: 20px;
+  background: transparent url(/media/img/next.png) no-repeat right center;
+}
+/* line 451, base.sass */
+.blog .primary .archive th {
+  font-weight: bold;
+  border-bottom: solid 1px #cccccc;
+  text-align: left;
+}
+/* line 459, base.sass */
+.blog .primary .navigation {
+  margin-bottom: 1em;
+}
+/* line 461, base.sass */
+.blog .primary .navigation a.next {
+  float: right;
+  padding-right: 20px;
+  background: transparent url(/media/img/next.png) no-repeat right center;
+}
+/* line 471, base.sass */
+.blog .primary .comments {
+  margin-top: 2em;
+}
+/* line 475, base.sass */
+.blog .secondary {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  float: left;
+  width: 270px;
+  margin-left: 15px;
+  padding: 1em 10px;
+  background-color: #fafafa;
+  border: solid 1px #cccccc;
+}
+/* line 491, base.sass */
+.blog .secondary h3 {
+  margin-top: 0;
+}
+/* line 495, base.sass */
+.blog .secondary ul {
+  padding-left: 20px;
+}
+
+/* line 503, base.sass */
+.comments #add-comment {
+  margin-top: 1em;
+}
+/* line 507, base.sass */
+.comments form.add_comment {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  margin-top: 1em;
+  padding: 0 1em;
+  border: solid 1px #cccccc;
+  background-color: #fafafa;
+}
+/* line 519, base.sass */
+.comments form.add_comment label {
+  float: left;
+  font-weight: bold;
+  width: 90px;
+  vertical-align: top;
+}
+/* line 531, base.sass */
+.comments form.add_comment p input {
+  width: 300px;
+}
+/* line 535, base.sass */
+.comments form.add_comment p.help {
+  padding-left: 90px;
+  margin-top: -0.75em;
+}
+/* line 543, base.sass */
+.comments form.add_comment p.submit input {
+  width: auto;
+}
+/* line 549, base.sass */
+.comments form.add_comment p.checkbox label {
+  float: none;
+  width: auto;
+  font-weight: normal;
+}
+/* line 557, base.sass */
+.comments form.add_comment p.checkbox input {
+  width: auto;
+}
+/* line 561, base.sass */
+.comments form.add_comment textarea {
+  width: 425px;
+  height: 10em;
+}
+/* line 567, base.sass */
+.comments form.add_comment ul.errorlist {
+  color: red;
+}
+/* line 571, base.sass */
+.comments form.add_comment span.loading {
+  margin-left: 5px;
+  background: transparent url(/media/img/loading.gif) no-repeat left center;
+  padding-left: 20px;
+}
+/* line 579, base.sass */
+.comments form.add_comment a.gravatar {
+  background: transparent url(/media/img/gravatar.png) no-repeat right center;
+  padding-right: 20px;
+}
+/* line 587, base.sass */
+.comments .comment .body {
+  margin-left: 1em;
+}
+/* line 591, base.sass */
+.comments .comment .user {
+  width: 250px;
+  margin-left: 380px;
+}
+/* line 597, base.sass */
+.comments .comment .user.no-gravatar {
+  padding-left: 42px;
+}
+/* line 601, base.sass */
+.comments .comment .user img.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+/* line 607, base.sass */
+.comments .comment .user .name {
+  font-weight: bold;
+}
+
+/* line 617, base.sass */
+body.comments form.add_comment {
+  width: 610px;
+}
+/* line 621, base.sass */
+body.comments .preview {
+  width: 640px;
+  margin-left: 1em;
+  margin-bottom: 2em;
+}
+
+/* line 633, base.sass */
+.resume #content {
+  padding-bottom: 0;
+}
+/* line 637, base.sass */
+.resume .download {
+  float: right;
+  font-size: 65%;
+  padding-left: 20px;
+  background: transparent url(/media/img/acrobat.png) no-repeat left top;
+}
+/* line 647, base.sass */
+.resume h3 {
+  font-size: 125%;
+  border-bottom: 3px double #cccccc;
+  padding-bottom: 0.15em;
+}
+/* line 655, base.sass */
+.resume ul.position {
+  width: 100%;
+  float: left;
+  list-style: none;
+  margin: 0 0 1em 0;
+  padding: 0;
+}
+/* line 667, base.sass */
+.resume ul.position li {
+  float: left;
+  width: 450px;
+  line-height: 1.25em;
+}
+/* line 675, base.sass */
+.resume ul.position li.title {
+  font-weight: bold;
+}
+/* line 679, base.sass */
+.resume ul.position li.company, .resume ul.position li.location {
+  float: right;
+  text-align: right;
+}
+/* line 685, base.sass */
+.resume div.projects {
+  margin-left: 1em;
+}
+/* line 689, base.sass */
+.resume div.split {
+  float: left;
+  width: 49%;
+}
+/* line 695, base.sass */
+.resume div.split.pad {
+  margin-right: 1em;
+}
+/* line 699, base.sass */
+.resume ul.split, .resume ul.split3 {
+  float: left;
+  margin-top: 0;
+  list-style: none;
+}
+/* line 707, base.sass */
+.resume ul.split li, .resume ul.split3 li {
+  float: left;
+  width: 405px;
+  list-style: none;
+  background: url(/media/img/tick.png) no-repeat left center;
+  padding-left: 25px;
+}
+/* line 721, base.sass */
+.resume ul.split3 li {
+  width: 275px;
+}
+/* line 729, base.sass */
+.resume ul li ul {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+
+/* line 739, base.sass */
+.portfolio h3 {
+  font-size: 140%;
+}
+/* line 743, base.sass */
+.portfolio table {
+  margin: 0 auto;
+}
+/* line 747, base.sass */
+.portfolio table th {
+  text-align: left;
+  border-bottom: double 3px #cccccc;
+  padding-left: 0;
+}
+/* line 755, base.sass */
+.portfolio table img {
+  border: solid 1px #cccccc;
+  margin: 0 1em;
+}
+/* line 763, base.sass */
+.portfolio table tr.even td {
+  background-color: #fafafa;
+  border-top: solid 1px #cccccc;
+  border-bottom: solid 1px #cccccc;
+}
+/* line 771, base.sass */
+.portfolio table td {
+  vertical-align: top;
+  padding: 1em 0.5em 1em 0;
+}
+/* line 777, base.sass */
+.portfolio table td.thumbnail {
+  text-align: center;
+  color: #666666;
+}
+/* line 783, base.sass */
+.portfolio table td.summary {
+  width: 450px;
+  padding-right: 1em;
+}
+/* line 789, base.sass */
+.portfolio table td.summary a.title {
+  font-size: 120%;
+}
+/* line 793, base.sass */
+.portfolio table td.year {
+  min-width: 100px;
+  font-weight: bold;
+  padding-right: 1em;
+}
+
+/* line 803, base.sass */
+a.back, a.index {
+  padding-left: 20px;
+  background: transparent url(/media/img/back.png) no-repeat left center;
+}
+
+/* line 813, base.sass */
+.portfolio_details h2 {
+  width: 675px;
+}
+/* line 817, base.sass */
+.portfolio_details #content {
+  padding-bottom: 0;
+}
+/* line 821, base.sass */
+.portfolio_details hr {
+  margin: 2em 0 3em 0;
+}
+/* line 827, base.sass */
+.portfolio_details .project h3 {
+  font-weight: bold;
+  font-size: 160%;
+}
+/* line 833, base.sass */
+.portfolio_details .project p.url {
+  margin-top: -0.5em;
+}
+/* line 837, base.sass */
+.portfolio_details .project dl {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  background-color: #fafafa;
+  float: right;
+  padding: 0 0.75em 0.5em 0.75em;
+  margin: -4em 0 1em 1em;
+  width: 225px;
+  border: solid 1px #cccccc;
+  line-height: 2em;
+}
+/* line 855, base.sass */
+.portfolio_details .project dl dt {
+  font-weight: bold;
+  margin-right: 1.5em;
+  float: left;
+  width: 50px;
+  text-align: right;
+}
+/* line 867, base.sass */
+.portfolio_details .project dl dt.title, .portfolio_details .project dl dt.navigation {
+  width: auto;
+  float: none;
+  margin: 0;
+  text-align: center;
+  border-bottom: solid 1px #cccccc;
+}
+/* line 879, base.sass */
+.portfolio_details .project dl dt.navigation {
+  text-align: left;
+  font-weight: normal;
+  border-top: solid 1px #cccccc;
+  border-bottom: 0;
+}
+/* line 889, base.sass */
+.portfolio_details .project dl dt.navigation a.next {
+  float: right;
+  padding-right: 20px;
+  background: transparent url(/media/img/next.png) no-repeat right center;
+}
+/* line 897, base.sass */
+.portfolio_details .project p.thumbnails {
+  clear: right;
+}
+/* line 901, base.sass */
+.portfolio_details .project div.thumbnails {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  margin: 0 0 20px 0;
+  padding: 18px 20px 0 18px;
+  border: solid 1px #cccccc;
+  background-color: #fafafa;
+  width: 900px;
+}
+/* line 915, base.sass */
+.portfolio_details .project div.thumbnails div.thumbnail {
+  float: left;
+  width: 440px;
+}
+/* line 921, base.sass */
+.portfolio_details .project div.thumbnails div.thumbnail img {
+  border: solid 1px #999999;
+}
+/* line 925, base.sass */
+.portfolio_details .project div.thumbnails div.thumbnail p {
+  text-align: center;
+  margin: 0.25em 0 1em 0;
+}
+/* line 931, base.sass */
+.portfolio_details .project div.thumbnails div.pad {
+  padding-left: 15px;
+}
+/* line 935, base.sass */
+.portfolio_details .project div.thumbnails br {
+  clear: left;
+}
+
+/* line 941, base.sass */
+.portfolio_video .video {
+  float: right;
+  margin-left: 1em;
+  width: 640px;
+  height: 480px;
+  display: block;
+}
+/* line 953, base.sass */
+.portfolio_video .video.flash-replaced {
+  text-align: center;
+}
+/* line 957, base.sass */
+.portfolio_video .video.flash-replaced .alt {
+  display: block;
+  height: 0;
+  position: absolute;
+  overflow: hidden;
+  width: 0;
+}
+
+/* line 971, base.sass */
+.about img.picture {
+  float: right;
+  border: solid 1px #cccccc;
+  margin: 0 0 1em 1em;
+}
+
+/* line 981, base.sass */
+.contact #content {
+  background: white url(/media/img/contact.jpg) no-repeat right 100px;
+}
+/* line 985, base.sass */
+.contact .form {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  width: 450px;
+  padding: 1em;
+  margin-left: 1em;
+  border: solid 1px #cccccc;
+  background-color: #fafafa;
+}
+/* line 999, base.sass */
+.contact .form label {
+  float: left;
+  font-weight: bold;
+  width: 80px;
+  vertical-align: top;
+}
+/* line 1011, base.sass */
+.contact .form p input {
+  width: 200px;
+}
+/* line 1017, base.sass */
+.contact .form p.submit input {
+  width: auto;
+}
+/* line 1021, base.sass */
+.contact .form #id_subject {
+  width: 325px;
+}
+/* line 1025, base.sass */
+.contact .form textarea {
+  width: 325px;
+  height: 10em;
+}
+/* line 1031, base.sass */
+.contact .form ul.errorlist {
+  color: red;
+}
+/* line 1035, base.sass */
+.contact .form span.loading {
+  margin-left: 5px;
+  background: transparent url(/media/img/loading.gif) no-repeat left center;
+  padding-left: 20px;
+}
+/* line 1043, base.sass */
+.contact .message {
+  margin-left: 1em;
+}
+/* line 1047, base.sass */
+.contact .message .sent, .contact .message .failed {
+  padding-left: 20px;
+}
+/* line 1051, base.sass */
+.contact .message .failed {
+  color: red;
+  background: transparent url(/media/img/exclamation.png) no-repeat left center;
+}
+/* line 1057, base.sass */
+.contact .message .sent {
+  color: green;
+  background: transparent url(/media/img/accept.png) no-repeat left center;
+}
+/* line 1063, base.sass */
+.contact a.email {
+  margin-left: 1em;
+  padding-left: 20px;
+  background: transparent url(/media/img/email.png) no-repeat left center;
+}
