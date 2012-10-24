@@ -36,13 +36,11 @@ class Category(models.Model):
 
 
 	def save(self):
-		self.slug = '%s' % slugify(self.title)
 		self.slug = '%s' % unidecode_slugify(self.title)
 		super(Category, self).save()
 
 	@permalink
 	def get_absolute_url(self):
-	    return ('blog_category_detail', None, {'slug': self.slug})
 	    return ('Loading_blog_category_detail', None, {'slug': self.slug})
 
 
@@ -61,7 +59,6 @@ class Post(models.Model):
 
 	@permalink
 	def get_absolute_url(self):
-	    return ('blog_detail', None, {
 	    return ('Loading_blog_detail', None, {
             'year': self.publish.year,
             'month': self.publish.month,

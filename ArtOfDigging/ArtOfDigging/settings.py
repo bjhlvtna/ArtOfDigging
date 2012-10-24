@@ -151,11 +151,8 @@ INSTALLED_APPS = (
     'django.contrib.comments',
     'sorl.thumbnail',
     'LoadingBlog',
-    'LoadingBlog.templatetags',
-    'BlogComments',
     'comments',
     'LoadingPortfolio',
-    
     'DDBlog',
     'InstauratioMagna',
     'DDBlog.templatetags',
@@ -164,7 +161,6 @@ INSTALLED_APPS = (
 )
 
 # Overrides the form used for comments
-COMMENTS_APP = 'BlogComments'
 COMMENTS_APP = 'comments'
 
 # A sample logging configuration. The only tangible logging

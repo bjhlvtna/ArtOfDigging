@@ -8,8 +8,6 @@
 		{% block blog_content %}{% endblock %}
 	</div>
 	<div class="secondary">
-		{% load recent_posts blog_categories %}
-		{% recent_posts 5 as recent %}
 		{% load LoadingBlogCategory LoadingBlogRecentPost %}
 		{% loading_recent_posts 5 as recent %}
 		
@@ -24,7 +22,6 @@
 			</div>
 		{% endif %}
 		
-		{% blog_categories as categories %}
 		{% loading_blog_categories as categories %}
 		
 		{% if categories %}

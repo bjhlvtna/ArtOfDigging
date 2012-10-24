@@ -9,7 +9,6 @@ from django.shortcuts import render_to_response, get_object_or_404
 
 from LoadingBlog.models import *
 
-def post_list(request, page=0, paginate_by=5, **kwargs):
 def Loading_post_list(request, page=0, paginate_by=5, **kwargs):
 	page_size = paginate_by
 
@@ -22,7 +21,6 @@ def Loading_post_list(request, page=0, paginate_by=5, **kwargs):
 		**kwargs
 	)
 
-def post_detail(request, slug, year, month, day, **kwargs):
 def Loading_post_detail(request, slug, year, month, day, **kwargs):
 	posts = None
 	
@@ -46,7 +44,6 @@ def Loading_post_detail(request, slug, year, month, day, **kwargs):
 		**kwargs
 	)
 	
-def category_list(request, template_name='LoadingBlog/category_list.html', **kwargs):
 def Loading_category_list(request, template_name='LoadingBlog/category_list.html', **kwargs):
 	return list_detail.object_list(
 		request,
@@ -55,7 +52,6 @@ def Loading_category_list(request, template_name='LoadingBlog/category_list.html
 		**kwargs
 	)
 	
-def category_detail(request, slug, template_name='LoadingBlog/category_detail.html', **kwargs):
 def Loading_category_detail(request, slug, template_name='LoadingBlog/category_detail.html', **kwargs):
 	category = get_object_or_404(Category, slug=slug)
 	
@@ -67,7 +63,6 @@ def Loading_category_detail(request, slug, template_name='LoadingBlog/category_d
 		**kwargs
 	)
 	
-def post_archive_year(request, year, **kwargs):
 def Loading_post_archive_year(request, year, **kwargs):
 	return date_based.archive_year(
 		request,
@@ -79,7 +74,6 @@ def Loading_post_archive_year(request, year, **kwargs):
 		**kwargs
 	) 
 
-def post_archive_month(request, year, month, **kwargs):
 def Loading_post_archive_month(request, year, month, **kwargs):
 	return date_based.archive_month(
 		request,
@@ -92,7 +86,6 @@ def Loading_post_archive_month(request, year, month, **kwargs):
 		**kwargs
 	) 
 
-def post_archive_day(request, year, month, day, **kwargs):
 def Loading_post_archive_day(request, year, month, day, **kwargs):
 	return date_based.archive_day(
 		request,
