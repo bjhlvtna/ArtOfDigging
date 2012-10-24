@@ -1,0 +1,11 @@
+{% extends "InstauratioMagna/base.html" %}
+
+{% block blog_title %}{{ object.title }} &#187; {% endblock %}
+
+{% block blog_content %}
+	{% with object as post %}
+		<div class="single">
+			{% include "InstauratioMagna/post.html" %}
+		</div>
+	{% endwith %}
+{% endblock %}

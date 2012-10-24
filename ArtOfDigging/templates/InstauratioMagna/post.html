@@ -9,10 +9,8 @@
 	{% endif %}
 	
 	<p class="byline">
-		<span class="by">By <a href="/contact/">{{ post.author }}</a></span>
 		<span class="by">By {{ post.author }}</span>
 		&nbsp;|&nbsp;
-		<span class="published">{{ post.publish|date:"F j, Y" }}</span>
 		<span class="published">{{ post.publish|date:"Y/d/m" }}</span>
 	</p>
 		
@@ -75,7 +73,6 @@
 							<span class="name">{{ comment.user_name }}</span>
 						{% endif %}
 						
-						<div class="date">{{ comment.submit_date|date:"F j, Y" }}</div>
 						<div class="date">{{ comment.submit_date|date:"Y/d/m" }}</div>
 					
 				</div>
@@ -86,11 +83,8 @@
 			{% endfor %}
 		{% endif %}
 	
-		
-			
 		<h2 id="add-comment">Add Comment</h2>
 		<p>Please fill out the form below to add a comment.</p>
-		<p><em>Comments are moderated and must be approved before they will appear on the site.</em></p>
 		{% with post.get_absolute_url as next %}
 			{% render_comment_form for post %}
 		{% endwith %}

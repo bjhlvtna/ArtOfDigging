@@ -153,12 +153,19 @@ INSTALLED_APPS = (
     'LoadingBlog',
     'LoadingBlog.templatetags',
     'BlogComments',
+    'comments',
     'LoadingPortfolio',
     
+    'DDBlog',
+    'InstauratioMagna',
+    'DDBlog.templatetags',
+    'LoadingBlog.templatetags',
+    'InstauratioMagna.templatetags',
 )
 
 # Overrides the form used for comments
 COMMENTS_APP = 'BlogComments'
+COMMENTS_APP = 'comments'
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

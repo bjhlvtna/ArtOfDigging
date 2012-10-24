@@ -67,21 +67,27 @@ a:active, a:hover, a:link {
 /* line 147, base.sass */
 #header h1 {
   display: block;
+  display: block;*/
   margin: 0;
   padding: 10px 10px;
 }
 /* line 155, base.sass */
+
 #header h1 a {
   display: block;
   text-indent: -9999px;
+  /*text-indent: -9999px;*/
   background: white;
   height: 80px;
   width: 411px;
 }
+
 /* line 167, base.sass */
+/*
 #header h1 a.print {
   display: none;
 }
+*/
 /* line 171, base.sass */
 #header h1 br {
   display: none;

@@ -6,4 +6,5 @@ from django.template import RequestContext
 
 def home(request):
 	return HttpResponseRedirect(reverse('LoadingBlog.views.post_list'))
+	return HttpResponseRedirect(reverse('LoadingBlog.views.Loading_post_list'))
 	

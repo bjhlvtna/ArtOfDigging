@@ -15,7 +15,7 @@ from django.utils import timezone
 from os.path import join as pjoin
 from sorl.thumbnail import ImageField
 from ArtOfDigging.settings import MEDIA_ROOT
-from LoadingBlog.managers import PublicManager
+from InstauratioMagna.managers import PublicManager
 
 
 def unidecode_slugify(str):
@@ -37,13 +37,11 @@ class Category(models.Model):
 
 	def save(self):
 		self.slug = '%s' % slugify(self.title)
-		self.slug = '%s' % unidecode_slugify(self.title)
 		super(Category, self).save()
 
 	@permalink
 	def get_absolute_url(self):
-	    return ('blog_category_detail', None, {'slug': self.slug})
-	    return ('Loading_blog_category_detail', None, {'slug': self.slug})
+	    return ('insta_blog_category_detail', None, {'slug': self.slug})
 
 
 class Post(models.Model):
@@ -61,8 +59,7 @@ class Post(models.Model):
 
 	@permalink
 	def get_absolute_url(self):
-	    return ('blog_detail', None, {
-	    return ('Loading_blog_detail', None, {
+	    return ('insta_blog_detail', None, {
             'year': self.publish.year,
             'month': self.publish.month,
             'day': self.publish.day,
@@ -93,14 +90,14 @@ class Image(models.Model):
     width = models.IntegerField(blank=True, null=True)
     height = models.IntegerField(blank=True, null=True)  	
     image = ImageField(
-    	upload_to='LoadingBlog/images/',
+    	upload_to='InstauratioMagna/images/',
     )
 
 
 class File(models.Model):
     post = models.ForeignKey(Post, related_name='files')
     file = models.FileField(
-        upload_to='LoadingBlog/files/'
+        upload_to='InstauratioMagna/files/'
     )
 
 

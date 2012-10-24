@@ -27,7 +27,11 @@ urlpatterns = patterns('',
     (r'^$', 'ArtOfDigging.views.home'),
     
     (r'^admin/', include(admin.site.urls)),
+
     (r'^LoadingBlog/', include('LoadingBlog.urls')),
+    (r'^DDBlog/', include('DDBlog.urls')),
+    (r'^InstauratioMagna/', include('InstauratioMagna.urls')),
+
     (r'^comments/', include('django.contrib.comments.urls')),
     (r'^LoadingPortfolio/', include('LoadingPortfolio.urls')),    
    	(r'^media/(?P<path>.*)/$','django.views.static.serve', { 'document_root': media }),
