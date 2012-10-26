@@ -1,7 +1,6 @@
 #-*- coding: utf-8 -*-
 import os
 from django.conf.urls import patterns, include, url
-
 from django.conf.urls.static import static
 from django.conf import settings
 # Uncomment the next two lines to enable the admin:
@@ -37,3 +36,4 @@ urlpatterns = patterns('',
     (r'^LoadingPortfolio/', include('LoadingPortfolio.urls')),    
    	(r'^media/(?P<path>.*)/$','django.views.static.serve', { 'document_root': media }),
 )
+

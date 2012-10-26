@@ -2,8 +2,6 @@
 import os
 SITE_ROOT_DIR= os.path.dirname(os.path.realpath(__file__))
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
 DEBUG = False
 TEMPLATE_DEBUG = True
 THUMBNAIL_DEBUG = True
@@ -11,7 +9,6 @@ THUMBNAIL_DEBUG = True
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
-
 ADMIN_MEDIA_ROOT = os.path.join(SITE_ROOT_DIR, '../admin/')
 MANAGERS = ADMINS
 
@@ -33,12 +30,10 @@ DATABASES = {
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'America/Chicago'
 TIME_ZONE = 'Asia/Seoul'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
 LANGUAGE_CODE = 'ko-KR'
 
 SITE_ID = 1
@@ -56,8 +51,6 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = os.path.join(os.path.dirname(__file__),'../media/')
-
 #MEDIA_ROOT = os.path.join(os.path.dirname(__file__),'../media/')
 MEDIA_ROOT = os.path.join(SITE_ROOT_DIR, '../media/')
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
@@ -69,7 +62,6 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = ''
 STATIC_ROOT = os.path.join(SITE_ROOT_DIR, '../static/')
 
 # URL prefix for static files.
@@ -120,7 +112,6 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    os.path.join(os.path.dirname(__file__),'../templates'),
     #os.path.join(os.path.dirname(__file__),'../templates'),
     os.path.join(SITE_ROOT_DIR, "../templates"),
 )
@@ -134,7 +125,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.messages.context_processors.messages',
 )
 
-THUMBNAIL_DEBUG = True
+
 
 # Cache
 CACHES = {
