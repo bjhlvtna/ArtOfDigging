@@ -1,0 +1,113 @@
+{% load url from future %}<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE|default:"en-us" }}" xml:lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<title>{% block title %}{% endblock %}</title>
+		<link rel="stylesheet" href="/media/admin/css/bootstrap.css" />
+		<link rel="stylesheet" href="/media/admin/css/bootstrap-responsive.css" />
+		<link rel="stylesheet" href="/media/admin/css/rewrite.css" />
+		{% block extrastyle %}{% endblock %}
+		{% block extrahead %}{% endblock %}
+		{% block blockbots %}
+		<meta name="robots" content="NONE,NOARCHIVE" />
+		{% endblock %}
+	</head>
+	{% load i18n %}
+	<body>
+		{% if not is_popup %}
+		{% if user.is_active and user.is_staff %}
+		<!-- Navigation -->
+		<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container-fluid">
+					<a class="brand">{% block branding %}Django Admin{% endblock %}</a>
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+					<div class="nav-collapse">
+						<ul class="nav pull-right">
+							{% block userlinks %}
+							<li class="active">
+								<a href="javascript:;">{% trans 'Welcome, ' %}{% filter force_escape %}{% firstof user.first_name user.username %} {% firstof user.last_name user.username %}{% endfilter %}</a>
+							</li>
+							{% url 'django-admindocs-docroot' as docsroot %}
+							{% if docsroot %}
+							<li>
+								<a href="{{ docsroot }}">{% trans 'Documentation' %}</a>
+							</li>
+							{% endif %}
+
+							{% url 'admin:password_change' as password_change_url %}
+							{% if password_change_url %}
+							<li>
+								<a href="{{ password_change_url }}"> {% else %} <a href="{{ root_path }}password_change/">
+							</li>
+							{% endif %}
+							{% trans 'Change password' %}</a>
+
+							{% url 'admin:logout' as logout_url %}
+							{% if logout_url %}
+							<li>
+								<a href="{{ logout_url }}"> {% else %} <a href="{{ root_path }}logout/">
+							</li>
+							{% endif %}
+							{% trans 'Log out' %} </a>
+							{% endblock %}
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% endif %}
+		{% endif %}
+		<!-- Container -->
+		<div class="container-fluid">
+
+			{% if messages %}
+				{% for message in messages %}
+					<div{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>
+						<button class="close" data-dismiss="alert">×</button>
+						{{ message }}
+					</div>
+				{% endfor %}
+			{% endif %}
+			
+			{% block breadcrumbs %}
+			<ul class="breadcrumb">
+				<li><a href="{% url 'admin:index' %}">{% trans 'Home' %}</a> <span class="divider">/</span></li>
+				<li class="active">{% if title %} {{ title }}{% endif %}</li>
+			</ul>
+			{% endblock %}
+			
+			{% block pretitle %}{% endblock %}
+			{% block content_title %}
+				{% if title %}  
+				<div class="page-header">
+					<h3>{{ title }}</h3>
+				</div>
+				{% endif %}
+			{% endblock %}
+			<div class="row-fluid show-grid">
+				<div class="span8">
+					{% block content %}
+						{% block object-tools %}{% endblock %}
+						{{ content }}
+					{% endblock %}
+				</div>
+				<div class="span4">
+					{% block sidebar %}{% endblock %}
+				</div>
+			</div>
+			
+			{% block footer %}{% endblock %}
+		</div>
+
+		<script src="/media/admin/js/jquery.min.js"></script>
+		<script src="/media/admin/js/bootstrap.min.js"></script>
+
+	</body>
+</html>

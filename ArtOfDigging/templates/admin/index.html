@@ -1,0 +1,88 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+
+<!-- Breadcrumbs -->
+{% block breadcrumbs %}{% endblock %}
+
+
+<!-- Content Title -->
+{% block content_title %}
+<div class="page-header">
+	<h3>Site Administration</h3>
+</div>
+{% endblock %}
+
+
+<!-- Content -->
+{% block content %}
+{% if app_list %}
+	{% for app in app_list %}
+		<table class="table table-bordered table-striped" summary="{% blocktrans with app.name as name %}Models available in the {{ name }} application.{% endblocktrans %}">
+			<tr>
+				<th colspan="2" class="title"><a href="{{ app.app_url }}" class="section">{% blocktrans with app.name as name %}{{ name }}{% endblocktrans %}</a></th>
+			</tr>
+		{% for model in app.models %}
+			<tr>
+			{% if model.perms.change %}
+				<th scope="row"><a href="{{ model.admin_url }}">{{ model.name }}</a></th>
+			{% else %}
+				<th scope="row">{{ model.name }}</th>
+			{% endif %}
+				<td width="50">
+				<div>
+					{% if model.perms.add %}
+					<a href="{{ model.admin_url }}add/" class="btn">{% trans 'Add' %}</a>
+					{% endif %}
+				 </div>
+				</td>
+			</tr>
+		{% endfor %}
+		</table>
+	{% endfor %}
+{% else %}
+	<p>{% trans "You don't have permission to edit anything." %}</p>
+{% endif %}
+{% endblock %}
+
+
+<!-- Sidebar -->
+{% block sidebar %}
+<div class="well">
+	<ul class="nav nav-list">
+		
+		<!-- Recent Actions -->
+		<li class="nav-header">{% trans 'Recent Actions' %}</li>
+		<li class="divider"></li>
+		<li>
+			{% load log %}
+		</li>
+		{% get_admin_log 10 as admin_log for_user user %}
+		{% if not admin_log %}
+		<li>
+			<p class="tip">{% trans 'None available' %}</p>
+		</li>
+		{% else %}
+		{% for entry in admin_log %}
+		<li>
+			{% if not entry.is_deletion and entry.get_admin_url %}
+				<a href="{{ entry.get_admin_url }}">
+			{% endif %}
+			
+			<i class="{% if entry.is_addition %}icon-plus{% endif %}{% if entry.is_change %}icon-pencil{% endif %}{% if entry.is_deletion %}icon-minus{% endif %}"></i> {{ entry.object_repr }}
+			
+			{% if entry.content_type %}
+				({% filter capfirst %}{% trans entry.content_type.name %}{% endfilter %})
+			{% else %}
+				({% trans 'Unknown content' %})
+			{% endif %}
+			
+			{% if not entry.is_deletion and entry.get_admin_url %}
+				</a>
+			{% endif %}
+		</li>
+		{% endfor %}
+		{% endif %}
+	</ul>
+</div>
+{% endblock %}

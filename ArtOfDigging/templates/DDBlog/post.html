@@ -12,6 +12,7 @@
 		<span class="by">By {{ post.author }}</span>
 		&nbsp;|&nbsp;
 		<span class="published">{{ post.publish|date:"Y/d/m" }}</span>
+		<span class="published">{{ post.publish|date:"Y/m/d" }}</span>
 	</p>
 		
 	<div class="body">{{ post.body_html|safe }}</div>
@@ -74,6 +75,7 @@
 						{% endif %}
 						
 						<div class="date">{{ comment.submit_date|date:"Y/d/m" }}</div>
+						<div class="date">{{ comment.submit_date|date:"Y/m/d" }}</div>
 					
 				</div>
 				

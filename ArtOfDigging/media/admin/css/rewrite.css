@@ -1,0 +1,27 @@
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+.alert ul {
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+/* CMU Colors */
+a {
+    color:#620a30;
+}
+
+a:hover {
+    color:#3d081b;
+}
+
+.nav li.active a {
+    background-color:#620a30;
+}
+
+.nav li.active a:hover {
+    background-color:#3d081b;
+}
