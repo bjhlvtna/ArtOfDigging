@@ -1,10 +1,15 @@
 # Django settings for ArtOfDigging project.
 import os
+import warnings
+
+warnings.filterwarnings(
+        'error', r"DateTimeField received a naive datetime",
+        RuntimeWarning, r'django\.db\.models\.fields')
 SITE_ROOT_DIR= os.path.dirname(os.path.realpath(__file__))
 
-DEBUG = False
-TEMPLATE_DEBUG = True
-THUMBNAIL_DEBUG = True
+DEBUG = False 
+TEMPLATE_DEBUG = DEBUG
+THUMBNAIL_DEBUG = DEBUG
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -47,7 +52,7 @@ USE_I18N = True
 USE_L10N = True
 
 # If you set this to False, Django will not use timezone-aware datetimes.
-USE_TZ = True
+USE_TZ = False
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"

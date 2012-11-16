@@ -103,7 +103,6 @@
 						</p>
 						{% endthumbnail %}
 					{% else %}
-					<h3>썸네일 </h3>
 						{% thumbnail thumbnail.image '440x330' as thumb %}
 						{% thumbnail thumbnail.image '800x600' as full %}
 						<a href="{{ full }}" rel="prettyPhoto[{{ project.title }}]"><img src="{{ thumb.url }}" width="{{ thumb.width }}" height="{{ thumb.height }}" alt="{{ thumbnail.title }}" title="{{ thumbnail.title }}" /></a>

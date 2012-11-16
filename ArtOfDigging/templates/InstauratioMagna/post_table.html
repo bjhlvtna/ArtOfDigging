@@ -11,7 +11,7 @@
 {% for post in object_list %}
 	<tr>
 		<td><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></td>
-		<td align="center">{{ post.publish|date:"Y/d/m" }}</td>
+		<td align="center">{{ post.publish|date:"Y/m/d" }}</td>
 	</tr>
 {% endfor %}
 	
